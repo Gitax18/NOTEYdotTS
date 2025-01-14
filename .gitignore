@@ -1,0 +1,88 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*/logs
+
+# Dependency directories
+node_modules/
+.pnp/
+.pnp.js
+package-lock.json
+*/package-lock.json
+*/node_modules/
+*/.pnp/
+*/.pnp.js
+
+# Build directories
+build/
+dist/
+*/build/
+*/dist/
+
+# Cache directories
+.cache/
+.tmp/
+.vscode/
+*/.cache/
+*/.tmp/
+*/.vscode/
+
+# Editor and IDE files
+.DS_Store
+.idea/
+.vscode/
+*/.vscode/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.*.local
+*/.env
+*/.env.*.local
+
+# Testing output
+coverage/
+*/coverage/
+
+# System files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Parcel-bundler cache
+.parcel-cache/
+*/.parcel-cache/
+
+# Storybook files
+storybook-static/
+*/storybook-static/
+
+# SASS cache
+.sass-cache/
+*/.sass-cache/
+
+# Optional npm cache
+.npm/
+*/.npm/
+
+# Yarn Integrity file
+.yarn-integrity
+*/.yarn-integrity
+
+# Next.js
+.next/
+out/
+*/.next/
+*/out/
+
+# MacOS system files
+._*
+
+# Other custom ignores (if needed)
+07-project-1/package-lock.json
+
