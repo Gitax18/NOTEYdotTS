@@ -1,0 +1,70 @@
+.form-container {
+  background-color: var(--chamoisee);
+  opacity: 90%;
+  backdrop-filter: blur(40px);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* below code is for hide/show logic */
+  display: none;
+}
+
+.add-note-form {
+  background-color: var(--desert-sand);
+  opacity: 100%;
+  height: 90vh;
+  width: 700px;
+  padding: 16px 64px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+#close-btn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
+}
+
+.form-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+#title,
+#description,
+#form-submit {
+  height: 48px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+#title:focus,
+#description:focus {
+  border: 2px solid var(--eerie-black);
+}
+
+#description {
+  height: 60%;
+  resize: none;
+}
+
+#form-submit {
+  background-color: var(--eerie-black);
+  color: var(--seashell);
+  font-weight: 500;
+  cursor: pointer;
+}

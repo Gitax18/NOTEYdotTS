@@ -4,9 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NOTEYdot-TS</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/notes.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- Header for storing navbar -->
+      <header class="nav-header">
+        <div id="logo">
+          <img src="notes-logo.jpg" alt="image logo" />
+          <strong>NotEY.ts</strong>
+        </div>
+      </header>
+      <!-- div for storing sidebar content -->
+      <div class="sidebar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/archive">archive</a></li>
+        </ul>
+      </div>
+      <!-- Main container to store notes -->
+      <main class="notes-container">
+        <!-- Header of the main section -->
+        <header class="home-header">
+          <h1 class="heading">Home</h1>
+          <p id="add-btn">
+            <span class="material-symbols-outlined">add</span>
+            <span>new</span>
+          </p>
+        </header>
+        <!-- hidden form, to create new notey's -->
+        <div class="form-container">
+          <form class="add-note-form">
+            <span class="material-symbols-outlined" id="close-btn">
+              close
+            </span>
+            <h2 class="form-heading">Add New Note</h2>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Enter note title here... "
+              required
+            />
+            <textarea
+              class="description"
+              id="description"
+              placeholder="Enter note description here..."
+              required
+            ></textarea>
+            <input type="submit" value="Submit" id="form-submit" />
+          </form>
+        </div>
+        <!-- main sections to hold notes -->
+        <section class="notes" id="notes">
+          <!-- note component -->
+          <div class="note">
+            <!-- header to store note options and title -->
+            <header class="note-header">
+              <strong class="note-title"> Loremipsumdolorsitametca </strong>
+              <!-- below is the container to hold option menu and btn to show/hide it -->
+              <div class="note-option">
+                <!-- option menu container -->
+                <!-- btn to show/hide menu -->
+                <span class="material-symbols-outlined hamburger-note">
+                  density_medium
+                </span>
+              </div>
+            </header>
+            <div class="note-body">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Laudantium officia veritatis, corrupti error
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

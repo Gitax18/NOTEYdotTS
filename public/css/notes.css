@@ -1,0 +1,47 @@
+/* container to hold notes */
+.notes {
+  height: 90%;
+  margin-top: 1%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 320px);
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  overflow-y: scroll;
+  scrollbar-width: none; /*To hide scroll bar*/
+}
+
+/*  styles for the note card */
+.note {
+  background-color: var(--seashell);
+  height: 220px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 1rem;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  margin-bottom: 5%;
+}
+
+.note-title {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  height: 100%;
+}
+
+.hamburger-note {
+  cursor: pointer;
+}
+
+.note-body {
+  font-size: 1rem;
+  overflow-y: scroll;
+  height: 85%;
+  scrollbar-width: none; /*To hide scroll bar*/
+}
