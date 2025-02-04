@@ -10,8 +10,10 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
   /* below code is for hide/show logic */
-  display: none;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .add-note-form {
@@ -27,7 +29,7 @@
   position: relative;
 }
 
-#close-btn {
+#form-close-btn {
   position: absolute;
   right: 16px;
   top: 16px;

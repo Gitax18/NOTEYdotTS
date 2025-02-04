@@ -33,15 +33,15 @@
         <!-- Header of the main section -->
         <header class="home-header">
           <h1 class="heading">Home</h1>
-          <p id="add-btn">
+          <p id="add-btn" role="button">
             <span class="material-symbols-outlined">add</span>
             <span>new</span>
           </p>
         </header>
         <!-- hidden form, to create new notey's -->
-        <div class="form-container">
-          <form class="add-note-form">
-            <span class="material-symbols-outlined" id="close-btn">
+        <div class="form-container" id="form-container">
+          <form class="add-note-form" id="add-note-form">
+            <span class="material-symbols-outlined" id="form-close-btn">
               close
             </span>
             <h2 class="form-heading">Add New Note</h2>
@@ -63,27 +63,7 @@
         </div>
         <!-- main sections to hold notes -->
         <section class="notes" id="notes">
-          <!-- note component -->
-          <div class="note">
-            <!-- header to store note options and title -->
-            <header class="note-header">
-              <strong class="note-title"> Loremipsumdolorsitametca </strong>
-              <!-- below is the container to hold option menu and btn to show/hide it -->
-              <div class="note-option">
-                <!-- option menu container -->
-                <!-- btn to show/hide menu -->
-                <span class="material-symbols-outlined hamburger-note">
-                  density_medium
-                </span>
-              </div>
-            </header>
-            <div class="note-body">
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laudantium officia veritatis, corrupti error
-              </p>
-            </div>
-          </div>
+          <!-- note components comes here-->
         </section>
       </main>
     </div>
