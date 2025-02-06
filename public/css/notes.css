@@ -11,6 +11,18 @@
   scrollbar-width: none; /*To hide scroll bar*/
 }
 
+.archive-notes {
+  height: 90%;
+  margin-top: 1%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 320px);
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  overflow-y: scroll;
+  scrollbar-width: none; /*To hide scroll bar*/
+}
+
 /*  styles for the note card */
 .note {
   background-color: var(--seashell);

@@ -76,7 +76,8 @@ body {
   text-transform: capitalize;
 }
 
-.notes-container {
+.notes-container,
+.archive-container {
   width: calc(100vw - 300px);
   height: 90vh;
   background-color: var(--desert-sand);
