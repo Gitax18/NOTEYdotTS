@@ -30,13 +30,52 @@ export default class Note {
                 <!-- option menu container -->
                 <div class="option-menu">
                   <ul>
-                    <li id="note-archive-btn">
+                    <li class="note-archive-btn" id="note-archive-btn">
                       <span class="material-symbols-outlined"> archive </span>
                       <p>Add to Archive</p>
                     </li>
                     <li
                       class="note-delete-btn"
                       id="remove-note-btn"
+                      role="button"
+                    >
+                      <span class="material-symbols-outlined"> delete </span>
+                      <p>Delete Note</p>
+                    </li>
+                  </ul>
+                </div>
+                <!-- btn to show/hide menu -->
+                <span class="material-symbols-outlined hamburger-note">
+                  density_medium
+                </span>
+              </div>
+            </header>
+            <div class="note-body">
+              <p class="note-description">
+                ${this.noteBody}
+              </p>
+            </div>
+    `;
+    return div;
+  }
+
+  public archiveNoteElement(): HTMLElement {
+    // creating html element dynamically
+    const div = document.createElement("div");
+    div.classList.add("note");
+    div.dataset.id = this.uniqid; // adding "data-id" attribute to element
+    div.innerHTML = `
+            <!-- header to store note options and title -->
+            <header class="note-header">
+              <strong class="note-title">${this.noteTitle}</strong>
+              <!-- below is the container to hold option menu and btn to show/hide it -->
+              <div class="note-option">
+                <!-- option menu container -->
+                <div class="option-menu">
+                  <ul>
+                    <li
+                      class="archive-delete-btn"
+                      id="archive-note-btn"
                       role="button"
                     >
                       <span class="material-symbols-outlined"> delete </span>
