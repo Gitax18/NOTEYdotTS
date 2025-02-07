@@ -1,4 +1,4 @@
-interface NoteStructure {
+export interface NoteStructure {
   title: String;
   body: String;
 }

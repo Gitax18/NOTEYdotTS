@@ -1,5 +1,5 @@
 import Note from "./classes/class.Note";
-
+import { NoteStructure } from "./classes/class.Note";
 // Form Elements
 const formContainer = document.getElementById("form-container");
 const form = document.getElementById("add-note-form");
@@ -16,19 +16,21 @@ const noteDeleteBtns = document.getElementsByClassName("note-delete-btn");
 const archiveContainer = document.getElementById("archive-notes");
 const archiveDeleteBtns = document.getElementsByClassName("archive-delete-btn");
 // Managing state
-const store = JSON.parse(localStorage.getItem("notes") || "[]");
-const archive = JSON.parse(localStorage.getItem("archive") || "[]");
+let store: NoteStructure[] = JSON.parse(localStorage.getItem("notes") || "[]");
+let archive: NoteStructure[] = JSON.parse(
+  localStorage.getItem("archive") || "[]"
+);
 
 // creating note element for existing notes
 if (store)
-  store.forEach((note) => {
+  store.forEach((note: NoteStructure) => {
     const newNote = new Note(note);
     if (notesContainer) notesContainer.appendChild(newNote.noteElement());
   });
 
 // creating archive note elements for archived notes
 if (archive)
-  archive.forEach((note) => {
+  archive.forEach((note: NoteStructure) => {
     const newNote = new Note(note);
     if (archiveContainer)
       archiveContainer.appendChild(newNote.archiveNoteElement());
@@ -36,9 +38,8 @@ if (archive)
 
 // Handling note toggle menu
 for (const hamburger of noteMenuBtns) {
-  hamburger.addEventListener("click", function () {
-    // const menu = this.firstChild;
-    const menu = this.firstElementChild;
+  hamburger.addEventListener("click", function (this: HTMLElement) {
+    const menu: HTMLElement = this.firstElementChild as HTMLElement;
     const style = window.getComputedStyle(menu);
     if (style.visibility == "hidden") menu.style.visibility = "visible";
     else menu.style.visibility = "hidden";
@@ -46,43 +47,46 @@ for (const hamburger of noteMenuBtns) {
 }
 
 // handling archive addition
-let arh_count = 0;
-for (const btn of noteArchiveBtns) {
-  btn.addEventListener("click", function () {
-    store.pop(arh_count);
-    const note = this.closest(".note");
-    const title = note.querySelector(".note-title").innerText;
-    const description = note.querySelector(".note-description").innerText;
-    archive.push({ title, body: description });
-    localStorage.setItem("archive", JSON.stringify(archive));
-    localStorage.setItem("notes", JSON.stringify(store));
-    note.remove();
-  });
-  arh_count++;
+for (let btnNo = 0; btnNo < noteArchiveBtns.length; btnNo++) {
+  noteArchiveBtns[btnNo].addEventListener(
+    "click",
+    function (this: HTMLElement) {
+      store.splice(btnNo, 1);
+      const note: HTMLElement = this.closest(".note") as HTMLElement;
+      const title: string = (note.querySelector(".note-title") as HTMLElement)
+        ?.innerText;
+      const description: string = (
+        note.querySelector(".note-description") as HTMLElement
+      )?.innerText;
+      archive.push({ title, body: description });
+      localStorage.setItem("archive", JSON.stringify(archive));
+      localStorage.setItem("notes", JSON.stringify(store));
+      note.remove();
+    }
+  );
 }
 
 // Handling note Deletion
-let count = 0;
-for (const btn of noteDeleteBtns) {
-  btn.addEventListener("click", function () {
-    store.pop(count);
+for (let btnNo = 0; btnNo < noteDeleteBtns.length; btnNo++) {
+  noteDeleteBtns[btnNo].addEventListener("click", function (this: HTMLElement) {
+    store.splice(btnNo, 1);
     localStorage.setItem("notes", JSON.stringify(store));
-
-    this.closest(".note").remove();
+    this.closest(".note")?.remove();
   });
-  count++;
 }
 
 // Handling archive note Deletion
-let arh_count_del = 0;
-for (const btn of archiveDeleteBtns) {
-  btn.addEventListener("click", function () {
-    archive.pop(arh_count_del);
-    localStorage.setItem("archive", JSON.stringify(archive));
+for (let btnNo = 0; btnNo < archiveDeleteBtns.length; btnNo++) {
+  archiveDeleteBtns[btnNo].addEventListener(
+    "click",
+    function (this: HTMLElement) {
+      archive.splice(btnNo, 1);
 
-    this.closest(".note").remove();
-  });
-  arh_count_del++;
+      localStorage.setItem("archive", JSON.stringify(archive));
+
+      this.closest(".note")?.remove();
+    }
+  );
 }
 
 // showing form
