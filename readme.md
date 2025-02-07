@@ -2,11 +2,11 @@
 
 NotEYdotTS allows users to easily create new notes, delete unwanted ones, and archive those they wish to save for later. The application is designed with simplicity in mind, making it a perfect tool for everyday note management as well as a practice project for exploring TypeScript and OOP concepts.
 
-## Project Demo
+## Project Interface
 
-Below is a Demo of the NotEY.TS application interface:
+Below is a screenshot of the NotEY.TS application interface:
 
-<video src="./screenshots/notey.ts-video.mp4" width="1020" controls autoplay poster="./screenshots/notey.ts-photo.png"></video>
+![](./screenshots/notey.ts-photo.png)
 
 ## Installation
 
